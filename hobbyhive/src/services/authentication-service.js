@@ -2,7 +2,7 @@ import axios from "axios";
 import { store } from "../auth/store/store";
 import Cookies from "js-cookie";
 
-const REACT_APP_API_URL = "http://34.147.60.153/api/auth/";
+const REACT_APP_API_URL = "http://35.204.232.177/api/auth/";
 
 const cookieOptions = {
   expires: 1, // 1 day
@@ -13,7 +13,7 @@ const cookieOptions = {
 export const authenticateUser = (username, password) => {
   return (dispatch) => {
     return axios
-      .post("http://34.147.60.153/api/auth/login", {
+      .post(REACT_APP_API_URL + "login", {
         username,
         password,
       })
@@ -24,7 +24,7 @@ export const authenticateUser = (username, password) => {
               response.data.userId,
               response.data.accessToken,
               response.data.refreshToken,
-              response.data.authorities[0].authority
+              response.data.authorities[0]?.authority
             )
           );
           Cookies.set("accessToken", response.data.accessToken, cookieOptions);
@@ -34,11 +34,6 @@ export const authenticateUser = (username, password) => {
             cookieOptions
           );
           Cookies.set("userId", response.data.userId, cookieOptions);
-          Cookies.set(
-            "role",
-            response.data.authorities[0].authority,
-            cookieOptions
-          );
           startTokenRefresh(response.data.refreshToken);
           return response.data;
         }
