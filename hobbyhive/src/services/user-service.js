@@ -1,9 +1,7 @@
 import axios from "axios";
-// const API_URL = "http://localhost:8100/api/users/";
-// const STATS_API_URL = "http://localhost:8100/api/users-stats";
 
-const API_URL = `${process.env.REACT_APP_API_URL}/api/users/`;
-const STATS_API_URL = `${process.env.REACT_APP_API_URL}/api/users-stats`;
+const API_URL = `http://35.204.232.177/api/users/`;
+const STATS_API_URL = `http://35.204.232.177/api/users-stats`;
 
 export const getLoggedInUser = (userId) => {
   return new Promise((resolve) => {

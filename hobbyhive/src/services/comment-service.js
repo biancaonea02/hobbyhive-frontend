@@ -1,7 +1,6 @@
 import axios from "axios";
-// const API_URL = "http://localhost:8200/api/comments";
-// const API_URL = "http://34.147.93.212/api/comments";
-const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/api/comments`;
+
+const REACT_APP_API_URL = "http://35.204.232.177/api/comments";
 
 export const getCommentsOfPost = (postId) => {
   return new Promise((resolve) => {

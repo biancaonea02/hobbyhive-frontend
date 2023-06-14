@@ -7,9 +7,9 @@ import { getLoggedInUser } from "./user-service";
 // const STATS_API_URL = "http://localhost:8200/api/stats";
 // const EXPORT_API_URL = "http://localhost:8200/api/export";
 
-const API_URL = `${process.env.REACT_APP_API_URL}/api/posts`;
-const STATS_API_URL = `${process.env.REACT_APP_API_URL}/api/stats`;
-const EXPORT_API_URL = `${process.env.REACT_APP_API_URL}/api/export`;
+const API_URL = `http://35.204.232.177/api/posts`;
+const STATS_API_URL = `http://35.204.232.177/api/stats`;
+const EXPORT_API_URL = `http://35.204.232.177/api/export`;
 
 //this method is for getting the posts of the logged in user's friends
 export const getFeedPosts = async (userId) => {

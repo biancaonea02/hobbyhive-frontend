@@ -1,7 +1,6 @@
 import axios from "axios";
-// const API_URL = "http://localhost:8200/api/likes";
-// const API_URL = "http://34.147.93.212/api/likes";
-const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/api/likes`;
+
+const REACT_APP_API_URL = `http://35.204.232.177/api/likes`;
 
 export const getLikesOfPost = (postId) => {
   return new Promise((resolve) => {

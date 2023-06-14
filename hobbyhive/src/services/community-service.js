@@ -1,7 +1,7 @@
 import axios from "axios";
 // const API_URL = "http://localhost:8087/api/communities";
 // const API_URL = "http://34.147.93.212/api/communities";
-const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/api/communities`;
+const REACT_APP_API_URL = `http://35.204.232.177/api/communities`;
 
 export const getCommunitiesJoinedByUser = (userId) => {
   return new Promise((resolve) => {

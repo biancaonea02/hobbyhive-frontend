@@ -1,5 +1,5 @@
 import axios from "axios";
-const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/api/friendRequests`;
+const REACT_APP_API_URL = `http://35.204.232.177/api/friendRequests`;
 
 export const getFriendsOfUser = (userId) => {
   return axios
