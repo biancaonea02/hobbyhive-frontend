@@ -2,7 +2,7 @@ import axios from "axios";
 import { store } from "../auth/store/store";
 import Cookies from "js-cookie";
 
-const REACT_APP_API_URL = `${process.env.REACT_APP_API_URL}/api/auth/`;
+const REACT_APP_API_URL = "http://34.147.60.153/api/auth/";
 
 const cookieOptions = {
   expires: 1, // 1 day
@@ -13,7 +13,7 @@ const cookieOptions = {
 export const authenticateUser = (username, password) => {
   return (dispatch) => {
     return axios
-      .post(REACT_APP_API_URL + "login", {
+      .post("http://34.147.60.153/api/auth/login", {
         username,
         password,
       })
