@@ -6,9 +6,13 @@ module.exports = (req, res) => {
   );
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  // Handle the request
-  // ...
-
-  // Return the response
-  res.send("Hello from Vercel!");
+  if (req.method === "GET") {
+    // Handle GET request logic
+    const responseData = {
+      message: "Hello from Vercel!",
+    };
+    res.status(200).json(responseData);
+  } else {
+    res.status(404).send("Not Found");
+  }
 };
