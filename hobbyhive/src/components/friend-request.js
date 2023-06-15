@@ -22,6 +22,7 @@ const FriendRequest = ({ id, senderId, setFriendRequests }) => {
     void (async () => {
       const user = await getLoggedInUser(senderId);
       setUser(user);
+      console.log(user);
     })();
   }, []);
 
@@ -80,7 +81,7 @@ const FriendRequest = ({ id, senderId, setFriendRequests }) => {
       <Avatar alt={`${user?.firstName} ${user?.lastNme}`} sx={{ mr: 2 }} />
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <Typography variant="subtitle1" fontWeight="bold">
-          {`${user?.firstName}nn ${user?.lastName}`}
+          {`${user?.firstName} ${user?.lastName}`}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {`${user?.firstName} wants to be your friend.`}

@@ -69,8 +69,15 @@ function Friends() {
       const uniqueFriends = friends.filter((friend, index, self) => {
         return index === self.indexOf(friend);
       });
-      setFriendRequests(allFriendRequests);
-      setFriends(uniqueFriends);
+      // setFriendRequests(allFriendRequests);
+      setFriendRequests(["648866011f4eb953c11aae9c"]);
+      // setFriends(uniqueFriends);
+      setFriends([
+        "64884aebeb162b712d52d1eb",
+        "64884b06eb162b712d52d1ec",
+        "64884b76eb162b712d52d1ed",
+        "64884b89eb162b712d52d1ee",
+      ]);
       setLoading(false);
     })();
   }, [userId]);
@@ -138,7 +145,8 @@ function Friends() {
             <FriendRequest
               key={friendRequest.id}
               id={friendRequest.id}
-              senderId={friendRequest?.senderId}
+              // senderId={friendRequest?.senderId}
+              senderId={friendRequest}
               setFriendRequests={setFriendRequests}
             />
           ))

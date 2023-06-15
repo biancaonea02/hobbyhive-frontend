@@ -5,6 +5,7 @@ export const getFriendsOfUser = (userId) => {
   return axios
     .get(`${REACT_APP_API_URL}/friends/${userId}`)
     .then((response) => {
+      console.log("friends", response.data);
       return response.data;
     })
     .catch(() => {

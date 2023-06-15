@@ -14,9 +14,17 @@ const EXPORT_API_URL = `http://35.204.232.177/api/export`;
 //this method is for getting the posts of the logged in user's friends
 export const getFeedPosts = async (userId) => {
   const friendsOfUser = await getFriendsOfUser(userId);
-  const postPromises = friendsOfUser.map((friendId) =>
-    axios.get(`${API_URL}/user/${friendId}`)
-  );
+  console.log("friends of user", friendsOfUser);
+  const friendsOfUser2 = [
+    "64884aebeb162b712d52d1eb",
+    "64884b06eb162b712d52d1ec",
+    "64884b76eb162b712d52d1ed",
+    "64884b89eb162b712d52d1ee",
+  ];
+
+  const postPromises = friendsOfUser2.map((friendId) => {
+    return axios.get(`${API_URL}/user/${friendId}`);
+  });
   return Promise.all(postPromises)
     .then((responses) => {
       const posts = responses.flatMap((response) => response.data);

@@ -13,12 +13,12 @@ import About from "./about";
 import { useSelector } from "react-redux";
 import { getLoggedInUser } from "../../services/user-service";
 import { styles } from "../../styles/profile";
-import Modal from "@mui/material/Modal";
+// import Modal from "@mui/material/Modal";
 import ModalDelete from "./modal-delete";
 import SnackbarMessage from "../snackbar";
 import Cookies from "js-cookie";
 import { exportCsvData, getPostsOfUser } from "../../services/post-service";
-import { List, ListItem } from "@mui/material";
+import { ClickAwayListener, List, ListItem, Modal } from "@mui/material";
 import InstagramPost from "../post";
 import { getFriendsOfUser } from "../../services/friends-service";
 import ModalEdit from "./modal-edit";
@@ -99,9 +99,9 @@ const ProfilePage = () => {
             <Typography variant="h4" style={styles.name}>
               {user.firstName} {user.lastName}
             </Typography>
-            <Typography variant="subtitle1" style={styles.friends}>
+            {/* <Typography variant="subtitle1" style={styles.friends}>
               {friends} Friends
-            </Typography>
+            </Typography> */}
             <Box textAlign="center" mt={2} ml={3}>
               <Button
                 variant="contained"
